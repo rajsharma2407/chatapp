@@ -4,7 +4,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const ejs = require('ejs');
 const formatMessage = require('./utils/messages');
-
+const PORT = process.env.PORT || 8080;
 var user = ''; 
 app.set('view engine','ejs');
 app.use(express.static('public'));
@@ -27,4 +27,4 @@ io.on('connection',socket=>{
 app.get('/',(req,res)=>{
     res.render('layout');
 })
-server.listen(8080,console.log('server is started at port 8080'));
+server.listen(PORT,console.log('server is started at port 8080'));
