@@ -4,7 +4,8 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const ejs = require('ejs');
 const formatMessage = require('./utils/messages');
-const PORT = process.env.PORT || 8080;
+
+var PORT = process.env.PORT || 8080;
 var user = ''; 
 app.set('view engine','ejs');
 app.use(express.static('public'));
