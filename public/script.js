@@ -2,10 +2,11 @@ const body = document.querySelector('.body');
 const form = document.querySelector('form');
 const socket = io('/');
 const height = document.querySelector('.body');
+const today = new Date();
+// console.log(today.getHours());
 
 const prompt = window.prompt('Your Name');
 
-console.log(prompt)
 socket.emit('user',prompt)
 const sound = new Audio('sound.mp3');
 socket.on('sound',()=>{
@@ -25,7 +26,7 @@ const msgOutput = (msg) =>{
     }
     var div = document.createElement(`div`);
 
-    div.innerHTML = `<span>${msg.username}</span> <span style="float:right">${msg.time}</span>
+    div.innerHTML = `<span>${msg.username}</span> <span style="float:right;color:gray;">${msg.time}</span>
     <p>${msg.text}</p>
     `;
     div.classList.add(`text`);
