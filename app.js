@@ -21,7 +21,9 @@ io.on('connection',socket=>{
     })
     socket.on('chatroom',msg=>{
         io.emit('message',formatMessage(user,msg));
+        socket.broadcast.emit('sound');
     })
+    
 });
 
 })

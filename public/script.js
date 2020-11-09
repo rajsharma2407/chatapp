@@ -7,9 +7,14 @@ const prompt = window.prompt('Your Name');
 
 console.log(prompt)
 socket.emit('user',prompt)
+const sound = new Audio('sound.mp3');
+socket.on('sound',()=>{
+    sound.play();
+})
 socket.on('message',message=>{
     msgOutput(message);
     // console.log(message.username)
+    
 })
 
 const msgOutput = (msg) =>{
@@ -28,6 +33,7 @@ const msgOutput = (msg) =>{
     body.append(div);
 
     height.scrollTop = height.scrollHeight;
+
 }
 window.onload = function(){
     document.querySelector('#msg').focus();
