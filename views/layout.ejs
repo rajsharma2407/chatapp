@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejs</title>
+    <title>I chat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />    <script src="socket.io/socket.io.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <style>
@@ -15,15 +15,18 @@
         }
         body{
 
-            background:linear-gradient(to right,rgb(100,0,200),rgb(150,0,200));
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: center;
+            /* background:rgba(0, 0, 0, 0.8); */
             color:white;
         }
         input{
+            box-shadow: 0 0px 10px black;
             outline: none;
         }
         form{
-            
-            max-width: 500px;
+            max-width: 75%;
             margin:auto;
             
         }
@@ -37,44 +40,51 @@
         .text{
             font-family: sans-serif;
             font-size: 1.2rem;
-            background-color: lightblue;
+            background-color:white  ;
             padding:7px 10px;
             color:black;
             margin:2px;
             /* float:left; */
             clear:both;
             border-radius: 5px;
-            max-width:60%;
+            max-width:75%;
             min-width: 35% ;
         }
         .text span{
-            color:blue;
+            color:green;
+            font-weight: bold;
             font-size: 1rem;
         }
         .body{
-            height: 500px;
+            min-height: 90vh;
             overflow-y: auto;
-            max-width: 500px;
+            max-width: 75%;
             margin:auto;
+            box-shadow: 0px 0px 10px black;
             border:1px solid white;
             padding:10px;
+            /* margin-top: -60px; */
         }
         input{
             width:90%;
             float:left;
-            height:30px;
+            height:40px;
             border:none;
             font-size: 1.2rem;
             text-indent: 5px;
         }
         button{
+            box-shadow: 1px 0 10px black;
             width:10%;
             float:right;    
-            height: 30px;
+            height: 40px;
             border:none;
             background-color: white;
             border-left: 1px solid black;
             font-size: 1rem;
+        }
+        .open{
+            padding-top: 10px;
         }
         @media(max-width: 500px){
             input{
@@ -91,7 +101,7 @@
 
 </head>
 <body>
-    <h1 style="text-align: center;">welcome to i chat</h1>
+    
     <div class="open">
 
     <div class="body">
